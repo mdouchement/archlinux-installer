@@ -22,45 +22,45 @@ jobs:
     strategy:
       matrix:
         model_name:
-          # Generic
-          - generic
-          # Asahi (Apple Silicon)
-          - asahi
-          ## Raspberry Pi UEFI ##
-          #- raspberrypi
-          ## RK3588-EDK2 ##
-          # Radxa
-          - radxa-rock-5a
+          # # Generic
+          # - generic
+          # # Asahi (Apple Silicon)
+          # - asahi
+          # ## Raspberry Pi UEFI ##
+          # #- raspberrypi
+          # ## RK3588-EDK2 ##
+          # # Radxa
+          # - radxa-rock-5a
           - radxa-rock-5b
-          - radxa-rock-5bplus
-          - radxa-rock-5c
-          - radxa-rock-5-itx
-          - radxa-cm5
-          # Orange Pi
-          - orangepi-5 #rockchip-rk3588s-orangepi-5
-          - orangepi-5plus
-          # Khadas
-          - khadas-edge2
-          # Nano Pi
-          - nanopc-t6
-          - nanopi-r6c
-          - nanopi-r6s
-          #- nanopi-m6
-          - nanopc-cm3588-nas
-          # Firefly
-          - firefly-roc-rk3588s-pc
-          - firefly-itx-3588j
-          - firefly-aio-3588q
-          # Other Rockchip
-          - indiedroid-nova #9tripod-rk3588s
-          - mixtile-blade3 #rockchip-rk3588-blade3-v101-linux
-          - stationpc-station-m3
-          - mekotronics-r58x
-          - mekotronics-r58-mini
-          - hinlink-h88k
-          - fydetab-duo
-          #- buzztv-powerstation-6
-          # Add more models as needed
+          # - radxa-rock-5bplus
+          # - radxa-rock-5c
+          # - radxa-rock-5-itx
+          # - radxa-cm5
+          # # Orange Pi
+          # - orangepi-5 #rockchip-rk3588s-orangepi-5
+          # - orangepi-5plus
+          # # Khadas
+          # - khadas-edge2
+          # # Nano Pi
+          # - nanopc-t6
+          # - nanopi-r6c
+          # - nanopi-r6s
+          # #- nanopi-m6
+          # - nanopc-cm3588-nas
+          # # Firefly
+          # - firefly-roc-rk3588s-pc
+          # - firefly-itx-3588j
+          # - firefly-aio-3588q
+          # # Other Rockchip
+          # - indiedroid-nova #9tripod-rk3588s
+          # - mixtile-blade3 #rockchip-rk3588-blade3-v101-linux
+          # - stationpc-station-m3
+          # - mekotronics-r58x
+          # - mekotronics-r58-mini
+          # - hinlink-h88k
+          # - fydetab-duo
+          # #- buzztv-powerstation-6
+          # # Add more models as needed
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -95,7 +95,7 @@ jobs:
           done
           echo "ARGS=$args" >> $GITHUB_ENV
           echo "BOOTFW_URL=$bootfw_url" >> $GITHUB_ENV
-  
+
       - name: Download UEFI Firmware
         if: ${{ env.BOOTFW_URL }}
         env:

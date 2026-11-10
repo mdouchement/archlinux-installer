@@ -24,66 +24,66 @@ jobs:
           # Generic
           #- generic
           # Raspberry Pi
-          - raspberrypi
-          # Radxa
-          - radxa-rock-2 #rock-2f & e20c shares rock-2a u-boot
-          - radxa-rock-3a
-          - radxa-rock-3b
-          - radxa-rock-3c
-          - radxa-rock-pi-4a
-          - radxa-rock-pi-4a-plus
-          - radxa-rock-pi-4b
-          - radxa-rock-pi-4b-plus
-          - radxa-rock-pi-4c
-          - radxa-rock-4c-plus
-          - radxa-rock-4se
-          - radxa-rock-5a
+          # - raspberrypi
+          # # Radxa
+          # - radxa-rock-2 #rock-2f & e20c shares rock-2a u-boot
+          # - radxa-rock-3a
+          # - radxa-rock-3b
+          # - radxa-rock-3c
+          # - radxa-rock-pi-4a
+          # - radxa-rock-pi-4a-plus
+          # - radxa-rock-pi-4b
+          # - radxa-rock-pi-4b-plus
+          # - radxa-rock-pi-4c
+          # - radxa-rock-4c-plus
+          # - radxa-rock-4se
+          # - radxa-rock-5a
           - radxa-rock-5b
-          - radxa-rock-5b-plus
-          - radxa-rock-5c
-          - radxa-rock-5d
-          - radxa-rock-5-itx
-          - radxa-cm3-io
-          - radxa-cm3-rpi-cm4-io
-          - radxa-cm3-sodimm-io
-          #- radxa-cm3i-io
-          #- radxa-e23
-          #- radxa-e25
-          - radxa-cm5-io
-          - radxa-cm5-rpi-cm4-io
-          - radxa-nx5-io
-          #- radxa-zero
-          #- radxa-zero-2pro
-          - radxa-zero3
-          # Khadas
-          - khadas-edge
-          - khadas-edge2
-          #- khadas-vim3
-          #- khadas-vim4
-          # Orange Pi
-          - orangepi-5
-          - orangepi-5b
-          - orangepi-5-plus
-          - orangepi-5-pro
-          - orangepi-5-max
-          - orangepi-cm5
-          #- orangepi-3b
-          # Nano Pi
-          - nanopc-t6
-          - nanopi-r6c
-          - nanopi-r6s
-          #- nanopi-cm3588
-          # Other Rockchip RK35XX
-          #- indiedroid-nova #9tripod-rk3588s
-          #- mixtile-blade3 #rockchip-rk3588-blade3-v101-linux
-          #- mixtile-core3588e
-          #- embedfire-lubancat-4 #rockchip-rk3588s-lubancat-4
-          #- turing-rk1
-          - armsom-sige7 #rockchip-rk3588-armsom-sige7
-          - armsom-aim7 #rockchip-rk3588-armsom-aim7
-          - armsom-w3 #rockchip-rk3588-armsom-w3
-          # Others
-          # Add more models as needed
+          # - radxa-rock-5b-plus
+          # - radxa-rock-5c
+          # - radxa-rock-5d
+          # - radxa-rock-5-itx
+          # - radxa-cm3-io
+          # - radxa-cm3-rpi-cm4-io
+          # - radxa-cm3-sodimm-io
+          # #- radxa-cm3i-io
+          # #- radxa-e23
+          # #- radxa-e25
+          # - radxa-cm5-io
+          # - radxa-cm5-rpi-cm4-io
+          # - radxa-nx5-io
+          # #- radxa-zero
+          # #- radxa-zero-2pro
+          # - radxa-zero3
+          # # Khadas
+          # - khadas-edge
+          # - khadas-edge2
+          # #- khadas-vim3
+          # #- khadas-vim4
+          # # Orange Pi
+          # - orangepi-5
+          # - orangepi-5b
+          # - orangepi-5-plus
+          # - orangepi-5-pro
+          # - orangepi-5-max
+          # - orangepi-cm5
+          # #- orangepi-3b
+          # # Nano Pi
+          # - nanopc-t6
+          # - nanopi-r6c
+          # - nanopi-r6s
+          # #- nanopi-cm3588
+          # # Other Rockchip RK35XX
+          # #- indiedroid-nova #9tripod-rk3588s
+          # #- mixtile-blade3 #rockchip-rk3588-blade3-v101-linux
+          # #- mixtile-core3588e
+          # #- embedfire-lubancat-4 #rockchip-rk3588s-lubancat-4
+          # #- turing-rk1
+          # - armsom-sige7 #rockchip-rk3588-armsom-sige7
+          # - armsom-aim7 #rockchip-rk3588-armsom-aim7
+          # - armsom-w3 #rockchip-rk3588-armsom-w3
+          # # Others
+          # # Add more models as needed
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -154,7 +154,7 @@ jobs:
           done
           echo "ARGS=$args" >> $GITHUB_ENV
           echo "UBOOT_URL=$uboot_url" >> $GITHUB_ENV
-  
+
       - name: Extract U-Boot
         if: ${{ env.UBOOT_URL }}
         env:
