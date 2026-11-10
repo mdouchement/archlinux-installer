@@ -3,9 +3,6 @@ name: Build Arch Linux Installer (UEFI)
 # Controls when the workflow will run
 on:
   push:
-    tags:
-      #- 'b*'
-      - 'UEFI*'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -127,10 +124,16 @@ jobs:
           mv ${{ matrix.model_name }}-archlinux-installer-uefi.img.xz $(echo "${{ matrix.model_name }}" | awk -F'-' '{print substr($2,1)}')-khadas-archlinux-installer-uefi.img.xz
         continue-on-error: true
 
-      - name: Upload to GitHub Release
-        uses: ncipollo/release-action@v1
+      # - name: Upload to GitHub Release
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #       artifacts: "*-archlinux-*.*.xz"
+      #       makeLatest: false
+      #       allowUpdates: true
+      #       omitBody: true
+
+      - name: Publish snapshot
+        uses: actions/upload-artifact@v7
         with:
-            artifacts: "*-archlinux-*.*.xz"
-            makeLatest: false
-            allowUpdates: true
-            omitBody: true
+          path: "*-archlinux-*.*.xz"
+          archive: false
